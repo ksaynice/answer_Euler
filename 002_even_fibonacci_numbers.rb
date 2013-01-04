@@ -14,4 +14,5 @@ while third < 4000000
   fibonacci << third
 end
 
-puts fibonacci.select{|v| v.even?}.inject(:+)
+sum = fibonacci.select{|v| v.even?}.inject(:+)
+puts sum
