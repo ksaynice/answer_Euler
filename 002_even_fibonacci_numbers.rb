@@ -1,18 +1,9 @@
-first = 1
-second = 2
-third = first + second
+fibonacci = [1,2]
 
-fibonacci = []
-fibonacci << first << second
-# fibonacci_even = []
-# fibonacci_even << second
-
-while third < 4000000
-  first = second
-  second = third
-  third = first + second
-  fibonacci << third
+while fibonacci.last < 4000000
+  fibonacci << fibonacci[-1] + fibonacci[-2]
 end
 
 sum = fibonacci.select{|v| v.even?}.inject(:+)
+puts fibonacci
 puts sum
