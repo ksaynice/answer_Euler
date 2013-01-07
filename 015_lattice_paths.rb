@@ -13,10 +13,6 @@ end
 
 arr = []
 21.times { arr << 1 }
+20.times { arr = arr.new_grid_column}
 
-i = 1
-while i < 21
-  arr = arr.new_grid_column
-  i += 1
-end
 puts arr
