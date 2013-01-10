@@ -16,23 +16,13 @@ triangle =
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'
 
 ta = triangle.split("\n").map {|x| x.split.map {|y| y.to_i}}.reverse
-ra = ta.first.map {|x| [x]}
+suma = ta.first
 ta[1..(ta.length - 1)].each do |line|
-  line.map.with_index do |x, i|
-    na = []
-    puts "nanananannana"
-    ra[i].each do |rax|
-      na << rax + x
-      puts na
-    end
-    ra[i+1].each do |ray|
-      na << ray + x
-      puts na
-    end
-    ra = na
+  nra = []
+  line.each.with_index do |x, i|
+    nra << (suma[i] > suma[i+1] ? x + suma[i] : x + suma[i+1])
   end
-  # line.map.with_index do |x, o|
-  #   [x + ta[i][o] , x + ta[i][o+1]]
-  # end
+  suma = nra
 end
-puts ra
+
+puts suma
